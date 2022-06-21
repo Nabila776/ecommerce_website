@@ -68,18 +68,18 @@
             <a href="index3.html" class="brand-link">
             <img src="{{asset('dist/img/brandingLogo.png')}}" alt="AdminLTE Logo"
                class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">ecommoerce-logo</span>
+            <span class="brand-text font-weight-light">ecommerce-logo</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
                <!-- Sidebar user panel (optional) -->
                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                   <div class="image">
-                     <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2 text-center"
+                     <img src="{{asset('dist/img/avatar2.png')}}" class="img-circle elevation-2 text-center"
                         alt="User Image">
                   </div>
                   <div class="info">
-                     <a href="#" class="d-block">Arman Hosen</a>
+                     <a href="#" class="d-block">Nabila Islam</a>
                   </div>
                </div>
                <!-- Sidebar Menu -->
@@ -130,7 +130,7 @@
                               </a>
                            </li>
                         </ul>
-                        </a>
+                        </li>
                      <li class="nav-item {{request()->is('addproduct')?'menu-open':(
                         request()->is ('manageproduct')?'menu-open':'')}}">
                         <a href="#" class="nav-link {{request()->is('addproduct')?'active':(
@@ -181,24 +181,112 @@
                            </li>
                         </ul>
                      </li>
-                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                           <i class="nav-icon fas fa-tree"></i>
-                           <p>
-                              CMS
-                              <i class="fas fa-angle-left right"></i>
-                           </p>
-                        </a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                           <i class="nav-icon fas fa-edit"></i>
-                           <p>
-                              Setting
-                              <i class="fas fa-angle-left right"></i>
-                           </p>
-                        </a>
-                     </li>
+                      <li class="nav-item {{request()->is('addbanner')?'menu-open':(
+                        request()->is ('contactus')?'menu-open':(request()->is ('deliveryinfo')?'menu-open':(request()->is ('privacy')?'menu-open':'')))}}">
+                          <a href="#" class="nav-link {{request()->is('addbanner')?'active':(
+                           request()->is ('contactus')?'active':(
+                           request()->is ('deliveryinfo')?'active':(request()->is('privacy')?'active':'')))}}">
+                              <i class="nav-icon fas fa-tree"></i>
+                              <p>
+                                  CMS
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('add.banner')}}"
+                                     class="nav-link {{request()->is('addbanner')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          Add Banner
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('contact.us')}}"
+                                     class="nav-link {{request()->is('contactus')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          Contact Us
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('delivery.info')}}"
+                                     class="nav-link {{request()->is('deliveryinfo')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          Delivery Info
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('privacy')}}"
+                                     class="nav-link {{request()->is('privacy')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          Privacy Policy
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+
+                      </li>
+
+                      <li class="nav-item {{request()->is('appsetting')?'menu-open':(
+                        request()->is ('smssetting')?'menu-open':(
+                           request()->is ('emailsetting')?'menu-open':'')
+                        )}}">
+                          <a href="{{route('privacy')}}" class="nav-link {{request()->is('appsetting')?'active':(
+                           request()->is ('smssetting')?'active':(
+                           request()->is ('emailsetting')?'active':''))}}">
+                              <i class="nav-icon fas fa-edit"></i>
+                              <p>
+                                  Setting
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('app.setting')}}"
+                                     class="nav-link {{request()->is('appsetting')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          App setting
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('sms.setting')}}"
+                                     class="nav-link {{request()->is('smssetting')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          Sms setting
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="{{route('email.setting')}}"
+                                     class="nav-link {{request()->is('emailsetting')?'active':''}}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>
+                                          E-mail setting
+                                      </p>
+                                  </a>
+                              </li>
+                          </ul>
+
+                      </li>
                   </ul>
                </nav>
                <!-- /.sidebar-menu -->
@@ -213,6 +301,14 @@
                         @if (session('status'))
                         <div class="alert alert-success">
                            {{ session('status') }}
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                           </button>
+                        </div>
+                        @endif
+                         @if (session('error'))
+                        <div class="alert alert-danger">
+                           {{ session('error') }}
                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                            <span aria-hidden="true">&times;</span>
                            </button>
@@ -242,7 +338,7 @@
       <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
       <script>
          $.widget.bridge('uibutton', $.ui.button)
-         
+
       </script>
       <!-- Bootstrap 4 -->
       <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

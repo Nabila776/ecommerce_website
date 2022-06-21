@@ -8,13 +8,13 @@
             <h3>Add Product</h3>
         </div>
         <div class="p-2 card-body">
-            <form class="d-flex justify-content-between" action="addproduct" method="POST" enctype="multipart/form-data">
+            <form class="d-flex justify-content-between" action="{{route('addproduct')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="product_l_hand col-lg-8">
                     <div class="form-group">
                         <label for="p_name">Product Name</label>
                         <input type="text" name="p_name" class="form-control form-control-md" id="p_name" placeholder="Product Name" required>
-                                        
+
                     </div>
 
                     <div class="form-group">
@@ -45,15 +45,11 @@
                 </div>
                 <div class="product_r_hand col-lg-3">
                     <div class="form-group ">
-                        <label for="exampleInputEmail1">Catagory</label>
+                        <label for="exampleInputEmail1">Category</label>
                         <select name="p_category" class="form-control form-control-md" required>
-                            <option value="1">Fashion</option>
-                            <option value="1">Gadget</option>
-                            <option value="1">T-shirt</option>
-                            <option value="1">E-electronic</option>
-                            <option value="1">Desktop </option>
-                            <option value="1">Ac</option>
-                            <option value="1">Laptop</option>
+                            @foreach($product as $value)
+                            <option value="{{$value->id}}">{{$value->c_name}}</option>
+                            @endforeach
                         </select>
 
                     </div>

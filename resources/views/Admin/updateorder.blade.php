@@ -36,7 +36,7 @@
                 <div class="short-box mb-3">
                     <h3>Billing</h3>
                     <div class="billing-text">
-                        <h6>Arman Hosen</h6>
+                        <h6>User1</h6>
                         <h6>Khilkhet,Dhaka</h6>
                         <h6>Bangladesh</h6>
                         <h6>1229</h6>
@@ -84,7 +84,7 @@
                 <div class="d-flex justify-content-between">
                 <strong>Bkash Charge</strong> <span>&#2547; 46.00</span>
                 </div>
-                
+
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
